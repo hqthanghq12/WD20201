@@ -179,36 +179,98 @@
 //     ...
 // ];
 // Ví dụ:
+// $food = [
+//     "ansang"=> "Cháo lòng",
+//     "antrua" => "Cơm gà",
+//     "antoi" => "Lẩu ếch",
+//     "andem" => "Chân gà nướng"
+// ];
+// // Hiern thị mảng
+// echo "<pre>";
+// var_dump($food);
+// // Lấy giá trị trong mảng
+// // Công thức: $ten_mang[key];
+// echo $food["ansang"];// Cháo lòng
+// // Thêm giá trị vào mảng
+// // Cú pháp: $ten_mang[key] = gia_tri; // cuối mảng
+// $food["angansang"] = "Phở gánh";
+// echo "<pre>";
+// var_dump($food);
+// // Cập nhập giá trị trong mảng
+// // Cú pháp: $ten_mang[key] = gia_tri;
+// $food["ansang"] = "Bún riêu";
+// echo "<pre>";
+// var_dump($food);
+// // Xóa giá trị trong mảng   
+// // Cú pháp: unset($ten_mang[key]);
+// unset($food["ansang"]);
+// echo "<pre>";
+// var_dump($food);
+// // Duyệt mảng
+// // foreach
+// foreach ($food as $key1 => $value1){
+//     echo $value1;
+// }
+// Mảng đa chiều
+// Cú pháp khai báo mảng đa chiều trong PHP
+// $ten_mang = [
+//     key_1 => [
+//         key_1_1 => gia_tri_1_1, 
+//         key_1_2 => gia_tri_1_2,
+//         ... 
+//     ],
+//     key_2 => [
+//         key_2_1 => gia_tri_2_1,
+//         key_2_2 => gia_tri_2_2,
+//         ...
+//     ],
+//     ...
+// ];
+// Ví dụ:
 $food = [
-    "ansang"=> "Cháo lòng",
-    "antrua" => "Cơm gà",
-    "antoi" => "Lẩu ếch",
-    "andem" => "Chân gà nướng"
+    "ansang"=> [
+        "mon1" => "Cháo lòng",
+        "mon2" => "Bún riêu",
+        "mon3" => "Phở gánh"
+    ],
+    "antrua" => [
+        "mon1" => "Cơm gà",
+        "mon2" => "Bún bò",
+        "mon3" => "Bún chả"
+    ],
+    "antoi" => [
+        "mon1" => "Lẩu ếch",
+        "mon2" => "Lẩu thái",
+        "mon3" => "Lẩu hải sản"
+    ],
+    "andem" => [
+        "mon1" => "Chân gà nướng",
+        "mon2" => "Gà nướng",
+        "mon3" => "Bò nướng"
+    ]
 ];
-// Hiern thị mảng
+// Hiển thị mảng
 echo "<pre>";
-var_dump($food);
+// var_dump($food);
 // Lấy giá trị trong mảng
-// Công thức: $ten_mang[key];
-echo $food["ansang"];// Cháo lòng
+// Công thức: $ten_mang[key1][key2];
+// var_dump($food['ansang']['mon1']);  // cháo lòng
 // Thêm giá trị vào mảng
-// Cú pháp: $ten_mang[key] = gia_tri; // cuối mảng
-$food["angansang"] = "Phở gánh";
-echo "<pre>";
-var_dump($food);
-// Cập nhập giá trị trong mảng
-// Cú pháp: $ten_mang[key] = gia_tri;
-$food["ansang"] = "Bún riêu";
-echo "<pre>";
-var_dump($food);
-// Xóa giá trị trong mảng   
-// Cú pháp: unset($ten_mang[key]);
-unset($food["ansang"]);
-echo "<pre>";
-var_dump($food);
+// Cú pháp: $ten_mang[key1][key2] = gia_tri;
+// $food['andem']['mon4'] = "Bánh mì dân tổ";
+// echo "<pre>";
+// var_dump($food);
+// xóa giá trị trong mảng
+// Cú pháp: unset($ten_mang[key1][key2]);
+// unset($food['andem']['mon4']);
+// echo "<pre>";
+// var_dump($food);
 // Duyệt mảng
 // foreach
 foreach ($food as $key1 => $value1){
-    echo $value1;
+    // var_dump($value1);
+    foreach ($value1 as $key2 => $value2){
+        echo $value2."<br>";
+    } 
 }
 ?>
