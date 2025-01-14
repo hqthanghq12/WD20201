@@ -267,10 +267,11 @@ echo "<pre>";
 // var_dump($food);
 // Duyệt mảng
 // foreach
-foreach ($food as $key1 => $value1){
-    // var_dump($value1);
-    foreach ($value1 as $key2 => $value2){
-        echo $value2."<br>";
-    } 
-}
+// foreach ($food as $key1 => $value1){
+//     // var_dump($value1);
+//     foreach ($value1 as $key2 => $value2){
+//         echo $value2."<br>";
+//     } 
+// }
+function
 ?>
