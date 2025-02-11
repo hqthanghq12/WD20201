@@ -12,6 +12,10 @@
  -> ASM 1 lấy: Lab 1234 (Có điểm cộng) và ASM1
 -->
  <?php 
-$view = 'views/admin/category/add.php';
-include 'views/admin/layout.php';
+// $view = 'views/admin/category/add.php';
+// include 'views/admin/layout.php';
+// Tesst truy vấn
+include 'Models/Product.php';
+$product = new Product();
+var_dump($product->getAllDataProduct());
  ?>
