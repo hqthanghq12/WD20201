@@ -20,6 +20,14 @@ class Product extends Model{
         // Thực thi câu lệnh
         return $this->connection->all(); // Lấy nhiều bản ghi
     }
-    // Lấy id
+    // Lấy id -> nhận id từ bên ngoài -> tham số
+    public function getIdDataProduct($id){
+        // Truy vấn phải đúng
+        $sql = "SELECT * FROM {$this->table} WHERE id = ?";
+        // luôn luôn sau $sql là gọi đến hàm chứa SQL
+        $this->connection->setSQL($sql);
+        // Thực thi câu lệnh
+        return $this->connection->first([$id]); // Lấy nhiều bản ghi
+    }
 }
 ?>

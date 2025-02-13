@@ -17,5 +17,6 @@
 // Tesst truy vấn
 include 'Models/Product.php';
 $product = new Product();
-var_dump($product->getAllDataProduct());
+// var_dump($product->getAllDataProduct()); // All data
+var_dump($product->getIdDataProduct(1)); // Id data = 1
  ?>
