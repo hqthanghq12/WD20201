@@ -29,5 +29,24 @@ class Product extends Model{
         // Thực thi câu lệnh
         return $this->connection->first([$id]); // Lấy nhiều bản ghi
     }
+    // Thêm mới
+    public function addDataProduct($id, $name, $price, $image, $quantity, $status){
+        $sql = "INSERT INTO {$this->table} VALUES (?,?,?,?,?,?)";
+        $this->connection->setSQL($sql);
+        return $this->connection->execute([$id, $name, $price, $image, $quantity, $status]);
+    }
+    // Sửa
+    public function editDataProduct( $name, $price, $image, $quantity, $status, $id){
+        $sql = "UPDATE {$this->table} SET `name`= ?,`price`= ?,
+        `image`= ?,`quantity`= ?,`status`= ? WHERE `id`= ?";
+        $this->connection->setSQL($sql);
+        return $this->connection->execute([$name, $price, $image, $quantity, $status, $id]);
+    }
+    // Xóa
+    public function deleteDataProduct($id){
+        $sql = "DELETE FROM {$this->table} WHERE `id` = ?";
+        $this->connection->setSQL($sql);
+        return $this->connection->execute([$id]);
+    }
 }
 ?>

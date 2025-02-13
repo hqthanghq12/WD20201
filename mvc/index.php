@@ -18,5 +18,16 @@
 include 'Models/Product.php';
 $product = new Product();
 // var_dump($product->getAllDataProduct()); // All data
-var_dump($product->getIdDataProduct(1)); // Id data = 1
+// var_dump($product->getIdDataProduct(1)); // Id data = 1
+// Thêm
+// $product->addDataProduct(null, 'Iphone 12', 20000000, 
+// 'iphone12.jpg', 10, 1);
+// var_dump($product->getAllDataProduct());
+// Sửa
+// $product->editDataProduct('Iphone 12 Pro', 30000000, 
+// 'iphone12pro.jpg', 10,1,1);
+// var_dump($product->getAllDataProduct());
+ // Xóa
+ $product->deleteDataProduct(1);
+ var_dump($product->getAllDataProduct());
  ?>
